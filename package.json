@@ -10,7 +10,10 @@
     "server-dev": "nodemon proxy.js"
   },
   "dependencies": {
+    "express": "^4.17.1",
     "http-proxy": "^1.17.0",
+    "morgan": "^1.9.1",
+    "tls": "0.0.1",
     "url": "^0.11.0"
   },
   "devDependencies": {
