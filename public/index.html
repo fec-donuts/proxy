@@ -3,18 +3,21 @@
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/style.css">
-    <title>FEC Demo</title>
+    <title>Shopazon</title>
   </head>
   <body>
-    <div id="Photo"></div>
-    <div id="Description"></div>
-    <div id="Reviews"></div>
+    <!-- <div id="Photo"></div> -->
+    <!-- <div id="Description"></div>
+        <div id="Reviews"></div> -->
     <div id="Related"></div>
-    <div id="Questions"></div>
-    <div id="Sponsored"></div>
+    <!-- <div id="Questions"></div>
+        <div id="Sponsored"></div> -->
     <script src="/lib/react.development.js"></script>
     <script src="/lib/react-dom.development.js"></script>
-    <script src="http://localhost:3010/app.js"></script>
+    <script src="http://localhost:3010/bundle.js"></script>
+              <script>
+                console.log(window.RelatedItemsApp)
+                </script>
     <!-- <script src="http://localhost:3002/app.js"></script>
     <script src="http://localhost:3003/app.js"></script>
     <script src="http://localhost:3004/app.js"></script>
@@ -35,7 +38,7 @@
     //     document.getElementById('Reviews')
     //   );
       ReactDOM.render(
-        React.createElement(Related),
+        React.createElement(RelatedItemsApp),
         document.getElementById('Related')
       );
     //   ReactDOM.render(
