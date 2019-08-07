@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/style.css">
+    <title>Shopazon</title>
+  </head>
+  <body>
+    <!-- <div id="Photo"></div> -->
+    <!-- <div id="Description"></div>
+        <div id="Reviews"></div> -->
+    <div id="Related"></div>
+    <!-- <div id="Questions"></div>
+        <div id="Sponsored"></div> -->
+    <script src="/lib/react.development.js"></script>
+    <script src="/lib/react-dom.development.js"></script>
+    <script src="http://localhost:3010/bundle.js"></script>
+              <script>
+                console.log(window.RelatedItemsApp)
+                </script>
+    <!-- <script src="http://localhost:3002/app.js"></script>
+    <script src="http://localhost:3003/app.js"></script>
+    <script src="http://localhost:3004/app.js"></script>
+    <script src="http://localhost:3001/app.js"></script>
+    <script src="http://localhost:3001/app.js"></script> -->
+    <!-- see: https://reactjs.org/docs/react-without-jsx.html -->
+    <script>
+    //   ReactDOM.render(
+    //     React.createElement(Photo),
+    //     document.getElementById('Photo')
+    //   );
+    //   ReactDOM.render(
+    //     React.createElement(Description),
+    //     document.getElementById('Description')
+    //   );
+    //   ReactDOM.render(
+    //     React.createElement(Reviews),
+    //     document.getElementById('Reviews')
+    //   );
+      ReactDOM.render(
+        React.createElement(RelatedItemsApp),
+        document.getElementById('Related')
+      );
+    //   ReactDOM.render(
+    //     React.createElement(Questions),
+    //     document.getElementById('Questions')
+    //   );
+    //   ReactDOM.render(
+    //     React.createElement(Sponsored),
+    //     document.getElementById('Sponsored')
+    //   );
+    </script>
+  </body>
+</html>
