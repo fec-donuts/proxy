@@ -95,11 +95,19 @@
 const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
+const proxy = require('http-proxy');
+const apiProxy = proxy.createProxyServer();
 const bodyParser = require('body-parser');
 
 const app = express();
 
 const port = process.env.PORT || 3111;
+
+app.use('/', (req, res) => {
+    apiProxy.web( req, res, {
+        target: 'http://localhost:3010'
+    })
+})
 
 app.use(morgan('dev'));
 
@@ -110,3 +118,20 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.listen(port, () => {
     console.log(`server running at: http://localhost:${port}`);
 })
+
+
+// const http = require('http');
+
+// proxyServer = proxy.createProxyServer({target: "http://localhost:3111"});
+
+// proxyServer.listen(3111);
+
+// server = http.createServer( (req, res) => {
+//     res.writeHead(200, { 'Content-Type': 'text/plain'});
+
+//     res.write('Proxy Request was Successful!' + '\n' + JSON.stringify(req.headers, true, 2));
+
+//     res.end();
+// });
+
+// server.listen(3010);
