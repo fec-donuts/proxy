@@ -102,12 +102,66 @@ const bodyParser = require('body-parser');
 const app = express();
 
 const port = process.env.PORT || 3111;
+// // Arjun Server
+// app.all('/pd', (req, res) => {
+//     apiProxy.web( req, res, {
+//         target: 'http://localhost:8000'
+//     })
+// })
 
-app.use('/', (req, res) => {
-    apiProxy.web( req, res, {
-        target: 'http://localhost:3010'
+// // Collin Server
+// app.all('/grabItems', (req, res) => {
+//     apiProxy.web( req, res, {
+//         target: 'http://localhost:3010'
+//     })
+// })
+
+// // Wesley Server
+// app.all('/ratings', (req, res) => {
+//     apiProxy.web( req, res, {
+//         target: 'http://localhost:4001'
+//     })
+// })
+
+// // Andrew Server
+// app.all('/singleObj', (req, res) => {
+//     apiProxy.web( req, res, {
+//         target: 'http://localhost:5431'
+//     })
+// })
+
+// // Shawn Server
+// app.all('/sponsored', (req, res) => {
+//     apiProxy.web( req, res, {
+//         target: 'http://localhost:3333'
+//     })
+// })
+
+// // Herman Server
+// app.all('/Questions', (req, res) => {
+//     apiProxy.web( req, res, {
+//         target: 'http://localhost:4008'
+//     })
+// })
+
+
+const serverPorts = [   {path: '/pd', server: 'http://localhost:8000/pd'}, 
+                        {path: '/grabItems', server:'http://localhost:3010/grabItems'}, 
+                        {path: '/ratings', server:'http://localhost:4001/ratings'}, 
+                        {path: '/singleObj', server:'http://localhost:5431/singleObj'}, 
+                        {path: '/sponsored', server:'http://localhost:3333/sponsored'}, 
+                        {path: '/Questions', server:'http://localhost:4008/Questions'}
+                    ]
+
+
+serverPorts.map( singlePort => {
+    app.use(singlePort.path, (req, res) => {
+        apiProxy.web( req, res, {
+            target: singlePort.server
+        })
     })
 })
+
 
 app.use(morgan('dev'));
 
