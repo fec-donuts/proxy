@@ -102,12 +102,64 @@ const bodyParser = require('body-parser');
 const app = express();
 
 const port = process.env.PORT || 3111;
-
+// Arjun Server
 app.use('/', (req, res) => {
     apiProxy.web( req, res, {
-        target: 'http://localhost:3010'
+        target: 'http://localhost:8000'
     })
 })
+
+// Collin Server
+// app.use('/', (req, res) => {
+//     apiProxy.web( req, res, {
+//         target: 'http://localhost:3010'
+//     })
+// })
+
+// Wesley Server
+// app.use('/', (req, res) => {
+//     apiProxy.web( req, res, {
+//         target: 'http://localhost:4001'
+//     })
+// })
+
+// Andrew Server
+// app.use('/', (req, res) => {
+//     apiProxy.web( req, res, {
+//         target: 'http://localhost:5431'
+//     })
+// })
+
+// Shawn Server
+// app.use('/', (req, res) => {
+//     apiProxy.web( req, res, {
+//         target: 'http://localhost:3333'
+//     })
+// })
+
+// Herman Server
+// app.use('/', (req, res) => {
+//     apiProxy.web( req, res, {
+//         target: 'http://localhost:4008'
+//     })
+// })
+
+
+// const serverPorts = [
+//                     'http://localhost:8000', 'http://localhost:3010', 
+//                     'http://localhost:4001', 'http://localhost:5431', 
+//                     'http://localhost:3333', 'http://localhost:4008'
+//                     ]
+
+
+// serverPorts.map( singlePort => {
+//     app.use('/', (req, res) => {
+//         apiProxy.web( req, res, {
+//             target: `${singlePort}`
+//         })
+//     })
+// })
+
 
 app.use(morgan('dev'));
 
