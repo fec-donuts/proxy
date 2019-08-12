@@ -1,0 +1,23 @@
+#Photo {
+    float: left;
+}
+
+#Description {
+    float: right;
+}
+
+#Questions {
+    float: left;
+}
+
+#Related {
+    /* float: right; */
+}
+
+#Reviews {
+    float: left;
+}
+
+#Sponsored {
+    float: right;
+}
